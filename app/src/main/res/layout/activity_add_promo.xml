@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back_promo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#885A3A" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Create Promotion"
+            android:textAlignment="center"
+            android:textColor="#885A3A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View android:layout_width="40dp" android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Promo Code" android:textColor="#885A3A" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <EditText
+                android:id="@+id/et_promo_code"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="e.g. SUMMER20"
+                android:inputType="textCapCharacters"
+                android:paddingHorizontal="16dp"
+                android:textColor="#885A3A" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Discount Type" android:textColor="#885A3A" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggle_discount_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:singleSelection="true"
+                app:checkedButton="@+id/btn_type_percent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_type_percent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="55dp"
+                    android:text="Percentage (%)"
+                    android:textColor="#885A3A"
+                    app:strokeColor="#C9B09A" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_type_flat"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="55dp"
+                    android:text="Flat Amount ($)"
+                    android:textColor="#885A3A"
+                    app:strokeColor="#C9B09A" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Discount Value" android:textColor="#885A3A" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <EditText
+                android:id="@+id/et_discount_value"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="e.g. 20"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="16dp"
+                android:textColor="#885A3A" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Applies To" android:textColor="#885A3A" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_promo_category"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_input_field"
+                android:paddingHorizontal="16dp"
+                android:textColor="#885A3A"
+                android:hint="e.g. All Products"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Minimum Spend ($) (Optional)" android:textColor="#885A3A" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <EditText
+                android:id="@+id/et_min_spend"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="e.g. 15.00"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="16dp"
+                android:textColor="#885A3A" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_promo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Activate Promotion"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#885A3A"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

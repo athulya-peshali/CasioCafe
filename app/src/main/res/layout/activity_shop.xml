@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_shop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/shop_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="48dp"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Menu"
+            android:textColor="#885A3A"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="12dp"
+            android:drawableTint="#A77D54"
+            android:hint="Search for coffee..."
+            android:paddingHorizontal="16dp"
+            android:textColor="#885A3A"
+            android:textColorHint="#C9B09A"
+            android:textSize="14sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_category_selected"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="10dp"
+                    android:text="All Products"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_category_unselected"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="10dp"
+                    android:text="Hot Coffee"
+                    android:textColor="#885A3A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_category_unselected"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="10dp"
+                    android:text="Cold Coffee"
+                    android:textColor="#885A3A" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shop_products"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shop_header" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="12dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout android:id="@+id/nav_home" android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:gravity="center" android:orientation="vertical"
+                android:foreground="?attr/selectableItemBackgroundBorderless"><ImageView android:layout_width="26dp"
+                android:layout_height="26dp" android:src="@drawable/ic_home" app:tint="#C9B09A" /></LinearLayout>
+
+            <LinearLayout android:id="@+id/nav_shop" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical" android:foreground="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_store" app:tint="#885A3A" />
+                <View android:layout_width="6dp" android:layout_height="6dp" android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_nav_dot" /></LinearLayout>
+
+            <LinearLayout android:id="@+id/nav_cart" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical" android:foreground="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_cart" app:tint="#C9B09A" /></LinearLayout>
+
+            <LinearLayout android:id="@+id/nav_profile" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                android:gravity="center" android:orientation="vertical" android:foreground="?attr/selectableItemBackgroundBorderless">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_profile" app:tint="#C9B09A" /></LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

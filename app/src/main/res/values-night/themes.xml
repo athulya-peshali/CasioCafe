@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.CasioCafe" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="colorPrimary">#885A3A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#C9B09A</item>
+        <item name="colorSurface">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.CasioCafe" parent="Base.Theme.CasioCafe" />
+
+    <style name="Theme.CasioCafe.Splash" parent="Theme.CasioCafe">
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">#FFFFFF</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">
+            @drawable/splash_logo_resized
+        </item>
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="TopRoundedSheet">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+</resources>
